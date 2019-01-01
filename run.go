@@ -19,6 +19,7 @@ func Run(tty bool, cmds []string) {
 	}
 	sendInitCommand(cmds, writePipe)
 	parent.Wait()
+	container.DeleteMountPoint(container.ROOT_URL, container.MNT_URL)
 	os.Exit(0)
 }
 
